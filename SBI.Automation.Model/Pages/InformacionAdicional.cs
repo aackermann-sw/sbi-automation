@@ -50,7 +50,8 @@ namespace SBI.Automation.Model.Pages.Login
         private const string setApartamento = "//body/app-root[1]/div[1]/div[2]/div[1]/app-step-additional-information[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[13]/div[1]/input[1]";
         private const string setTipoDocumento = "//body/app-root[1]/div[1]/div[2]/div[1]/app-step-additional-information[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[4]/div[1]/app-custom-dropdown[1]/div[1]";
         private const string setDepartamento =  "//body/app-root[1]/div[1]/div[2]/div[1]/app-step-additional-information[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[10]/div[1]/app-custom-dropdown[1]/div[1]/div[1]";
-
+        private const string setFechaNacimiento = "//body/app-root[1]/div[1]/div[2]/div[1]/app-step-additional-information[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[8]/div[1]/input[1]";
+        
         private IWebDriver Driver;
         public T Owner;
         public DatosPersonales(IWebDriver driver, T owner)
@@ -123,6 +124,12 @@ namespace SBI.Automation.Model.Pages.Login
         public DatosPersonales<T> SetApartamento(string value)
         {
             Driver.SendKeyAsync(By.XPath(setApartamento), value);
+
+            return this;
+        }
+        public DatosPersonales<T> SetFechaNacimiento(string value)
+        {
+            Driver.SendKeyAsync(By.XPath(setFechaNacimiento), value);
 
             return this;
         }

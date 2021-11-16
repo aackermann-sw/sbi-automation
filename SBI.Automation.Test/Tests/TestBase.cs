@@ -21,6 +21,10 @@ namespace Automation
             options.AddArgument("--headless");
 #endif
             options.AddArgument("--start-maximized");
+            options.AddArgument("--ignore-certificate-errors");
+            options.AddArgument("ignore-certificate-errors");
+
+
 
             driver = new ChromeDriver( Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "BrowserDriver"), options, TimeSpan.FromMinutes(4));
 

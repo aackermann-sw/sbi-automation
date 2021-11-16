@@ -27,11 +27,12 @@ namespace Automation
                 .SetMail("agus@hotmail.com")
                 .SetCodigoPostal("097812")
                 .SetRut("12454654")
-                .SetNroPuerta("150");
+                .SetNroPuerta("150")
+                .SetFechaNacimiento("11/27/1982");
 
             // assert
             page
-                .AssertVerifyPageUrl("LoginPage");
+                .AssertVerifyPageUrl("informacion-adicional");
         }
 
 
